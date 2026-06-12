@@ -29,9 +29,11 @@ public class Cidade implements Comparable<Cidade> {
                 '}';
     }
 
-    public static void ordemTem(){
+    public static void ordemTem() throws Exception{
         Ordenando o = new Ordenando();
+        Gravando g = new Gravando();
         o.OrdenaListaTemp(listaCidade);
+        g.Gravar(listaCidade);
     }
 
     public String getNomeDaCidade() {
