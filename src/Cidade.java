@@ -9,14 +9,27 @@ public class Cidade implements Comparable<Cidade> {
     private static List<Cidade> listaCidade = new ArrayList<>();
 
     public Cidade(TransfeirDados tra) {
-        this.nomeDaCidade = tra.name();
-        this.Temp = tra.main().temp();
-        this.estadoAtual = tra.weather().get(0).main();
-        this.DescritionClima = tra.weather().get(0).description();
-        listaCidade.add(this);
+        if (tra.name() == null || tra == null) {
+            throw new ErronaBusca("Erro na Busca");
+        } else {
+            this.nomeDaCidade = tra.name();
+            this.Temp = tra.main().temp();
+            this.estadoAtual = tra.weather().get(0).main();
+            this.DescritionClima = tra.weather().get(0).description();
+            listaCidade.add(this);
+        }
+    }
+    @Override
+    public String toString() {
+        return "Cidade{" +
+                "nomeDaCidade='" + nomeDaCidade + '\'' +
+                ", Temp=" + Temp +
+                ", estadoAtual='" + estadoAtual + '\'' +
+                ", DescritionClima='" + DescritionClima + '\'' +
+                '}';
     }
 
-    public void ordemTem(){
+    public static void ordemTem(){
         Ordenando o = new Ordenando();
         o.OrdenaListaTemp(listaCidade);
     }
