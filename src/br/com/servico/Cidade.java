@@ -1,5 +1,7 @@
 package br.com.servico;
 
+import br.com.excecoes.ErronaBusca;
+
 import java.util.ArrayList;
 import java.util.List;
 
