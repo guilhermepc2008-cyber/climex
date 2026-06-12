@@ -1,9 +1,9 @@
+package br.com.servico;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.awt.*;
 import java.io.FileWriter;
-import java.nio.channels.FileLock;
 import java.util.List;
 
 public class Gravando {

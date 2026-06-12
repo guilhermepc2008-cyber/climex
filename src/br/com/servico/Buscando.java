@@ -1,3 +1,5 @@
+package br.com.servico;
+
 import com.google.gson.Gson;
 
 import java.net.URI;

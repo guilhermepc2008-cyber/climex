@@ -1,3 +1,5 @@
+package br.com.servico;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class Cidade implements Comparable<Cidade> {
     }
     @Override
     public String toString() {
-        return "Cidade{" +
+        return "br.com.servico.Cidade{" +
                 "nomeDaCidade='" + nomeDaCidade + '\'' +
                 ", Temp=" + Temp +
                 ", estadoAtual='" + estadoAtual + '\'' +

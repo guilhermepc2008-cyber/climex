@@ -1,3 +1,5 @@
+package br.com.excecoes;
+
 public class ErronaBusca extends RuntimeException {
     private String msg;
     public ErronaBusca(String message) {
