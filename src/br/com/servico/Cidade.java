@@ -13,7 +13,7 @@ public class Cidade implements Comparable<Cidade> {
     private static List<Cidade> listaCidade = new ArrayList<>();
 
     public Cidade(TransfeirDados tra) {
-        if (tra.name() == null || tra == null) {
+        if (tra == null || tra.name() == null) {
             throw new ErronaBusca("Erro na Busca");
         } else {
             this.nomeDaCidade = tra.name();
