@@ -1,11 +1,14 @@
 package br.com.servico;
 
+import br.com.excecoes.ErronaBusca;
 import com.google.gson.Gson;
 
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Buscando {
     private Gson gson = new Gson();
@@ -21,7 +24,10 @@ public class Buscando {
             HttpResponse<String> retorno = carteiro.send(pacote, HttpResponse.BodyHandlers.ofString());
             TransfeirDados t = gson.fromJson(retorno.body(), TransfeirDados.class);
             Cidade cid = new Cidade(t);
+            LocalDateTime agora = LocalDateTime.now();
+            DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
             System.out.println("BUSCA CONCLUÍDA, INFORMAÇÕES SOBRE O CLIMA DA CIDADE");
+            System.out.println("DATA DA VERIFICAÇÃO: " + agora.format(f));
             System.out.println(cid.toString());
         } catch (ErronaBusca e){
             System.out.println(e.getMessage());
